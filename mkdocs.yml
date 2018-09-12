@@ -1,0 +1,56 @@
+site_name: Chaos Hub
+site_author: The Chaos Toolkit Team
+site_description: Chaos Hub - Collaborative Chaos Engineering
+copyright: '&copy; 2018 ChaosIQ'
+theme:
+  name: material
+  favicon: "static/images/favicon.ico"
+  logo: "static/images/logo.png"
+  palette:
+    primary: "white"
+    accent: "yellow"
+extra_css:
+  - 'static/css/extra.css'
+docs_dir: sources
+google_analytics:
+  - UA-107338053-1
+  - auto
+repo_name: chaoshub
+repo_url: https://github.com/chaostoolkit/chaoshub
+markdown_extensions:
+  - markdown_include.include:
+      base_path: "sources/shared"
+  - admonition
+  - codehilite(guess_lang=false, linenums=false)
+  - def_list
+  - footnotes
+  - meta
+  - smarty
+  - toc(permalink=true)
+  - pymdownx.betterem(smart_enable=all)
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist(custom_checkbox=true)
+  - pymdownx.tilde
+extra:
+  social:
+    - type: github
+      link: https://github.com/chaostoolkit/chaoshub
+    - type: twitter
+      link: https://twitter.com/chaostoolkit
+    - type: slack
+      link: https://join.chaostoolkit.org/
+    - type: medium
+      link: https://medium.com/chaos-toolkit
+nav:
+- Home: index.md
+- Usage:
+    - Install: usage/install.md
+    - Run: usage/run.md
+    - Configure: usage/configure.md
+

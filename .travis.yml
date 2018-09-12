@@ -1,0 +1,32 @@
+language: python
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y jq
+
+python:
+  - 3.5
+
+install:
+  - pip install -r requirements.txt
+
+env:
+  global:
+  - GH_USER_NAME: "chaostoolkit-ci"
+  - secure: "hIkCc7BCLdFQu7VURIZsOy1n9iPf0Imcit+szmWEhx8uxml1c2N9zDWh1AyOY/S9H71W9uachXoNxPVF/+Jt6DW7jjpdYvL9M1BMWw1FRojPMRh7+uciFw1dqAPW3WWxb8/cUcrwnNA4u5J3ehnaY5DbxO7EKA0c8kdv5C+kI2/AMo45a+Ukexrr7xiX5Yg9Msv6w+71aJA2i5/MkxbPquNzbE78gn3dklfeFVu0H95fydHPAQ+hU3qT/1mlP6L4NQ575ZikCQV4v8mfTUppUn7Uj+e2Ivd7pWLgq/QZLg1PqP88vP5r1Ujf5msHK6qvSUiUwVt7w/WL8+PtM/p/rpom2QufiyV3ZIekxjVdbxCej7/RJE1znYlS94qEFiWxrlvPJsngtKBqcBsTsx40hk4BfUhdvnFV45GZVWJIv5JQnvyxtpM3NCVGlbY3sth+uScOE7rDXQhMjN+y4PvS/fGH+qirKVUUqS2cn3ZZxk1nS5VkSpRpE6REc0M3dwjAt9ec3yTBBKmcTPFtVM8SP/XPfuVEAiwG4l/64ZgmNQcGM9L7gAzhxpt3/g8ybcXsw0yIp032KjdhBbKHOfecJJCpY60U/gpaXFDT9EKJuyUWrOUReSLpuQ2n5J1M51q6INTbmBQRyE+7O8bbWUy7iiT9UYY9dRm40DPe/+MyZSA="
+
+script: 
+  - bash ci.bash
+
+branches:
+  except:
+  - gh-pages
+notifications:
+  webhooks:
+    urls:
+    - 'https://webhook.atomist.com/atomist/travis/teams/T76U4GPGF'
+    on_cancel: always
+    on_error: always
+    on_start: always
+    on_failure: always
+    on_success: always
